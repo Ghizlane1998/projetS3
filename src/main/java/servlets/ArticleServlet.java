@@ -75,7 +75,9 @@ public class ArticleServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("id"));
 			articleDao.delete(articleDao.getById(id));
 		}
-		response.sendRedirect("..");
+		// apres chaque action l'admin est redirigé vers Article.jsp avec les nouvelles modifs
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/Article.jsp");
+				dispatcher.forward(request, response);
 		
 	}
 
