@@ -22,9 +22,12 @@ public class GlobalServlet extends HttpServlet {
     		request.getRequestDispatcher("WEB-INF/Categorie.jsp").forward(request, response);*/
     		
     		
-    		if(request.getSession().getAttribute("articleBean") == null)
+    	/*	if(request.getSession().getAttribute("articleBean") == null)
     			request.getSession().setAttribute("articleBean", new ArticleBean());
-    		request.getRequestDispatcher("WEB-INF/Article.jsp").forward(request, response);
+    		request.getRequestDispatcher("WEB-INF/Article.jsp").forward(request, response);*/
+      
+			RequestDispatcher RD = getServletContext().getRequestDispatcher("/login.jsp");
+		    RD.forward(request, response);
     		
     	}
 
